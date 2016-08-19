@@ -1,14 +1,14 @@
-var buttons = require('sdk/ui/button/action');
-var tabs = require("sdk/tabs");
-var prefs = require("sdk/simple-prefs").prefs;
+let buttons = require("sdk/ui/button/action");
+let tabs = require("sdk/tabs");
+let prefs = require("sdk/simple-prefs").prefs;
 
-var button = buttons.ActionButton({
+function handleClick(state) {
+  tabs.open(prefs.buttonUrl);
+}
+
+buttons.ActionButton({
   id: "mozilla-link",
   label: "Visit Mozilla",
   icon: "./firefox-logo.svg",
   onClick: handleClick
 });
-
-function handleClick(state) {
-  tabs.open(prefs.buttonUrl);
-}

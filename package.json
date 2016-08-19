@@ -17,6 +17,8 @@
   "dependencies": {
   },
   "devDependencies": {
+    "eslint": "3.3.1",
+    "eslint-plugin-json": "1.2.0",
     "jpm": "1.1.4"
   },
   "permissions": {
@@ -31,6 +33,7 @@
   }],
   "scripts": {
     "bundle": "jpm xpi",
+    "test:lint": "eslint --ext=.js,.json .",
     "firefox": "jpm run -b nightly"
   },
   "license": "MPL-2.0",
