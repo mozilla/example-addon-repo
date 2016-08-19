@@ -1,0 +1,40 @@
+{
+  "name": "example-addon-repo",
+  "version": "0.0.1",
+  "description": "Example add-on repository",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mozilla/example-addon-repo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mozilla/example-addon-repo/issues"
+  },
+  "engines": {
+    "firefox": ">=48.0a1",
+    "fennec": ">=48.0a1"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "jpm": "1.1.4"
+  },
+  "permissions": {
+    "multiprocess": true
+  },
+  "preferences": [{
+    "name": "buttonUrl",
+    "title": "Web page url",
+    "description": "The web page url to open when button is clicked",
+    "type": "string",
+    "value": "https://www.mozilla.org/"
+  }],
+  "scripts": {
+    "bundle": "jpm xpi",
+    "firefox": "jpm run -b nightly"
+  },
+  "license": "MPL-2.0",
+  "keywords": [
+    "jetpack"
+  ]
+}
