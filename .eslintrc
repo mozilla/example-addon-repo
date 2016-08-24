@@ -15,6 +15,7 @@
   },
   "plugins": [
     "json",
+    "mocha",
     // Possibly useful plugins.
     // https://www.npmjs.com/package/eslint-plugin-mozilla
     //"mozilla",
@@ -25,6 +26,17 @@
     "eslint:recommended"
   ],
   "rules": {
+    "mocha/no-exclusive-tests": 2,
+    "mocha/no-skipped-tests": 0,
+    "mocha/handle-done-callback": 2,
+    "mocha/no-global-tests": 2,
+    "mocha/no-return-and-callback": 2,
+    "mocha/valid-test-description": 2,
+    "mocha/valid-suite-description": 2,
+    "mocha/no-sibling-hooks": 2,
+    "mocha/no-mocha-arrows": 2,
+    "mocha/no-top-level-hooks": 2,
+
     "accessor-pairs": [2, {"setWithoutGet": true, "getWithoutSet": false}],
     "array-bracket-spacing": [2, "never"],
     "array-callback-return": 2,
