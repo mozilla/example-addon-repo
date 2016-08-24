@@ -14,7 +14,7 @@ tasks:
     workerType: "{{ taskcluster.docker.workerType }}"
     payload:
       maxRunTime: 1200
-      image: "standard8/example-addon-repo-lint:2016082401"
+      image: "standard8/example-addon-repo-lint:2016082401.ca24710db69a"
       command:
         - "/bin/bash"
         - "-lc"
@@ -27,3 +27,8 @@ tasks:
           - pull_request.synchronize
           - pull_request.reopened
           - push
+      treeherder:
+        jobKind: "test"
+        machine:
+          platform: "lint"
+        symbol: "ES"

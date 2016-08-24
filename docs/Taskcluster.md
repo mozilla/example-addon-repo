@@ -15,14 +15,17 @@ to be specially whitelisted. Ask the #taskcluster team for details.
 # Setting up Taskcluster on a new Repository
 
 Taskcluster tests will only run if there is a .taskcluster.yml on the
-branch being pushed to. Therefore, it will need to be developed and
+branch being pushed to. Therefore, integration will need to be developed and
 tested on a branch within a repository in the Mozilla organisation.
 
 ## Docker images
 
-TBD
+The docker images are based on mozilla-central images. They may need to be
+regenerated from time to time to add features, or to keep updated.
 
-./mach taskcluster-build-image lint
+See the instructions in the `docker-*` directories for more information on how
+to regenerate them.
+
 Tag & push to Docker hub
 
 ## .taskcluster.yml
