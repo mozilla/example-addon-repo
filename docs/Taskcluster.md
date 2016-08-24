@@ -40,3 +40,10 @@ for more information.
 The TaskClusterRobot needs to be added to the list of contributors for
 the repository for it to be able to report PR status properly. You'll need
 to add it with read/write permissions.
+
+# Integrating with TreeHerder
+
+Integration with TreeHerder not possible at this time. In theory it should be
+as simple as cloning [bug 1297671](https://bugzilla.mozilla.org/show_bug.cgi?id=1297671)
+and its patch, however the work to hook github and treeherder together is not
+complete (there are examples, but they are hacks).
