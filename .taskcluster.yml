@@ -32,3 +32,32 @@ tasks:
         machine:
           platform: "lint"
         symbol: "ES"
+  - provisionerId: "{{ taskcluster.docker.provisionerId }}"
+    metadata:
+      name: Example Add-on Functional Tests
+      description: Example Add-on Functional Tests
+      owner: "{{ event.head.user.email }}"
+      source: "{{ event.head.repo.url }}"
+    workerType: "{{ taskcluster.docker.workerType }}"
+    payload:
+      env:
+        NEED_WINDOW_MANAGER: true
+      maxRunTime: 1200
+      image: "standard8/example-addon-repo-functional:2016082501.01748a2b1a46"
+      command:
+        - "/bin/bash"
+        - "-lc"
+        - "./bin/setup.sh && curl -O https://ftp.mozilla.org/pub/firefox/releases/48.0.2/linux-x86_64/en-US/firefox-48.0.2.tar.bz2 && tar xfj *.bz2 && git clone {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.repo.branch}} && npm install && PATH=~/firefox:$PATH npm run test:func"
+    extra:
+      github:
+        env: true
+        events:
+          - pull_request.opened
+          - pull_request.synchronize
+          - pull_request.reopened
+          - push
+      treeherder:
+        jobKind: "test"
+        machine:
+          platform: "lint"
+        symbol: "ES"

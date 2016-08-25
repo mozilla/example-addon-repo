@@ -26,8 +26,6 @@ regenerated from time to time to add features, or to keep updated.
 See the instructions in the `docker-*` directories for more information on how
 to regenerate them.
 
-Tag & push to Docker hub
-
 ## .taskcluster.yml
 
 The .taskcluster.yml file lists the tests to run, which Docker images to run them
