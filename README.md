@@ -8,6 +8,7 @@ create a PR.
 
 * Add-on
   * jpm/sdk
+* [Keeping modules up to date via automated services](docs/ModulesUpdating.md)
 * Testing
   * Eslint - TODO
   * [Functional Tests](docs/Functional.md)
