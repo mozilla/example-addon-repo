@@ -23,8 +23,7 @@ It is intended that all parts of this repository have at least outline
 documentation. If you find any parts that are missing, please file an issue or
 create a PR.
 
-* Add-on
-  * Commands for running etc.
+* [Building, running code and tests](docs/Developing.md)
 * [Keeping modules up to date via automated services](docs/ModulesUpdating.md)
 * Testing
   * [Linting](docs/Linting.md)
