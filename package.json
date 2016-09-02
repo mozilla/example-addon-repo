@@ -19,6 +19,7 @@
     "eslint": "3.4.0",
     "eslint-plugin-json": "1.2.0",
     "eslint-plugin-mocha": "4.5.1",
+    "eslint-plugin-promise": "2.0.1",
     "geckodriver": "1.1.2",
     "jpm": "1.1.4",
     "mocha": "3.0.2",

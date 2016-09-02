@@ -22,6 +22,7 @@ describe("Example Add-on Functional Tests", function() {
 
     return promise.then(newDriver => {
       driver = newDriver;
+      return Promise.resolve();
     });
   });
 
@@ -68,6 +69,7 @@ describe("Example Add-on Functional Tests", function() {
       })
       .then(currentUrl => {
         assert.equal(currentUrl, "https://www.mozilla.org/en-US/");
+        return Promise.resolve();
       });
   });
 });

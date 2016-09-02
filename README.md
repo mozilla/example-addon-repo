@@ -10,6 +10,6 @@ create a PR.
   * jpm/sdk
 * [Keeping modules up to date via automated services](docs/ModulesUpdating.md)
 * Testing
-  * Eslint - TODO
+  * [Linting](docs/Linting.md)
   * [Functional Tests](docs/Functional.md)
   * [Continous Integration via Taskcluster](docs/Taskcluster.md)

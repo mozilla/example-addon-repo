@@ -16,11 +16,7 @@
   "plugins": [
     "json",
     "mocha",
-    // Possibly useful plugins.
-    // https://www.npmjs.com/package/eslint-plugin-mozilla
-    //"mozilla",
-    // https://www.npmjs.com/package/eslint-plugin-react-native
-    //"react"
+    "promise",
   ],
   "extends": [
     "eslint:recommended"
@@ -37,6 +33,10 @@
     "mocha/no-top-level-hooks": 2,
     "mocha/valid-suite-description": 2,
     "mocha/valid-test-description": 2,
+
+    "promise/always-return": 2,
+    "promise/catch-or-return": 2,
+    "promise/param-names": 2,
 
     "accessor-pairs": [2, {"setWithoutGet": true, "getWithoutSet": false}],
     "array-bracket-spacing": [2, "never"],
