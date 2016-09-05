@@ -44,7 +44,7 @@
     "bundle": "jpm xpi",
     "test": "npm-run-all test:*",
     "test:lint": "eslint --ext=.js,.json .",
-    "test:func": "export FIREFOX_BINARY=${FIREFOX_BINARY:-nightly}  && echo $FIREFOX_BINARY && XPI_NAME=example-addon-repo.xpi mocha test/functional/",
+    "test:func": "export FIREFOX_BINARY=${FIREFOX_BINARY:-nightly} && npm run bundle && XPI_NAME=example-addon-repo.xpi mocha test/functional/",
     "firefox": "jpm run -b ${FIREFOX_BINARY:-nightly}"
   },
   "license": "MPL-2.0",
