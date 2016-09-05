@@ -12,9 +12,8 @@ Assuming you have the basic utilities, then you also need:
 * [node.js](https://nodejs.org/) with npm.
   * Version 4.x of node is currently the minium required.
 * Firefox Nightly installed on your system.
-  * This is currently for running Firefox for the add-on.
-* Firefox Release installed on your system.
-  * This is currently for running the tests.
+  * This is the default for the repository,
+    [but can be changed](#Changing-the-Firefox-binary-location)
 
 Note: The split of different Firefox versions will be fixed by
 https://github.com/mozilla/example-addon-repo/issues/5.
@@ -48,6 +47,26 @@ $ npm run test:func
 
 More information on the tests in this repository
 [can be found here](https://github.com/mozilla/example-addon-repo/#documentation).
+
+# Changing the Firefox binary location
+
+You can use a different Firefox binary other than nightly by specifying
+a value for `FIREFOX_BINARY` on the command line, or in environment variables.
+
+```shell
+$ # Runs Firefox Release
+$ FIREFOX_BINARY=firefox npm test
+$ # Runs a specific copy of Firefox
+$ FIREFOX_BINARY=/path/to/firefox npm run firefox
+```
+
+The various shorthands are:
+
+* `firefox` - Firefox Release
+* `beta` - Firefox Beta
+* `firefoxdeveloperedition` - Firefox developer edition (on osx)
+* `aurora` - Firefox Aurora (developer edition on non-osx)
+* `nightly` - Firefox Nightly
 
 # Bundling an xpi
 

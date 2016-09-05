@@ -47,7 +47,7 @@ tasks:
       command:
         - "/bin/bash"
         - "-lc"
-        - "./bin/setup.sh && curl -O https://ftp.mozilla.org/pub/firefox/releases/48.0.2/linux-x86_64/en-US/firefox-48.0.2.tar.bz2 && tar xfj *.bz2 && git clone {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.repo.branch}} && npm install && PATH=~/firefox:$PATH npm run test:func"
+        - "./bin/setup.sh && curl -O https://ftp.mozilla.org/pub/firefox/releases/48.0.2/linux-x86_64/en-US/firefox-48.0.2.tar.bz2 && tar xfj *.bz2 && git clone {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.repo.branch}} && npm install && FIREFOX_BINARY=~/firefox/firefox npm run test:func"
     extra:
       github:
         env: true

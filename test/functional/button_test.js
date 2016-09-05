@@ -18,7 +18,7 @@ describe("Example Add-on Functional Tests", function() {
   let driver;
 
   before(function() {
-    let promise = utils.setupDriver();
+    let promise = utils.promiseSetupDriver();
 
     return promise.then(newDriver => {
       driver = newDriver;
@@ -31,7 +31,7 @@ describe("Example Add-on Functional Tests", function() {
   });
 
   it("should have a toolbar button", function() {
-    return utils.getAddonButton(driver)
+    return utils.promiseAddonButton(driver)
       .then(button => button.getAttribute("tooltiptext"))
       .then(text => assert.equal(text, "Visit Mozilla"));
   });
@@ -43,7 +43,7 @@ describe("Example Add-on Functional Tests", function() {
 
     return driver.getAllWindowHandles()
       .then(handles => assert.equal(1, 1))
-      .then(() => utils.getAddonButton(driver))
+      .then(() => utils.promiseAddonButton(driver))
       .then(button => button.click())
       .then(() => driver.wait(function*() {
         windowHandles = yield driver.getAllWindowHandles();

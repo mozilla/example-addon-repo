@@ -20,6 +20,8 @@
     "eslint-plugin-json": "1.2.0",
     "eslint-plugin-mocha": "4.5.1",
     "eslint-plugin-promise": "2.0.1",
+    "fs-promise": "0.5.0",
+    "fx-runner": "1.0.5",
     "geckodriver": "1.1.2",
     "jpm": "1.1.4",
     "mocha": "3.0.2",
@@ -42,8 +44,8 @@
     "bundle": "jpm xpi",
     "test": "npm-run-all test:*",
     "test:lint": "eslint --ext=.js,.json .",
-    "test:func": "npm run bundle && XPI_NAME=example-addon-repo.xpi mocha test/functional/",
-    "firefox": "jpm run -b nightly"
+    "test:func": "export FIREFOX_BINARY=${FIREFOX_BINARY:-nightly}  && echo $FIREFOX_BINARY && XPI_NAME=example-addon-repo.xpi mocha test/functional/",
+    "firefox": "jpm run -b ${FIREFOX_BINARY:-nightly}"
   },
   "license": "MPL-2.0",
   "keywords": [

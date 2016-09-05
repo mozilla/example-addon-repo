@@ -6,6 +6,8 @@ require("geckodriver");
 
 let firefox = require("selenium-webdriver/firefox");
 let webdriver = require("selenium-webdriver");
+let FxRunnerUtils = require("fx-runner/lib/utils");
+let Fs = require("fs-promise");
 let By = webdriver.By;
 let Context = firefox.Context;
 let until = webdriver.until;
@@ -25,7 +27,18 @@ const FIREFOX_PREFERENCES = {
   "devtools.debugger.remote-enabled": true
 };
 
-module.exports.setupDriver = () => {
+function promiseActualBinary(binary) {
+  return FxRunnerUtils.normalizeBinary(binary)
+    .then(binary => Fs.stat(binary).then(() => binary))
+    .catch(ex => {
+      if (ex.code === "ENOENT") {
+        throw new Error("Could not find ${binary}");
+      }
+      throw ex;
+    });
+}
+
+module.exports.promiseSetupDriver = () => {
   let profile = new firefox.Profile();
 
   Object.keys(FIREFOX_PREFERENCES).forEach(key => {
@@ -39,8 +52,10 @@ module.exports.setupDriver = () => {
     .forBrowser("firefox")
     .setFirefoxOptions(options);
 
-  return builder.buildAsync()
-    .then(function*(driver) {
+  return promiseActualBinary(process.env.FIREFOX_BINARY || "firefox")
+    .then(binaryLocation => options.setBinary(new firefox.Binary(binaryLocation)))
+    .then(() => builder.buildAsync())
+    .then(driver => {
       driver.setContext(Context.CHROME);
 
       let fileLocation = path.join(process.cwd(), process.env.XPI_NAME);
@@ -48,7 +63,7 @@ module.exports.setupDriver = () => {
       // This manually installs the add-on as a temporary add-on.
       // Hopefully selenium/geckodriver will get a way to do this soon:
       // https://bugzilla.mozilla.org/show_bug.cgi?id=1298025
-      let result = yield driver.executeAsyncScript(
+      return driver.executeAsyncScript(
         "let fileUtils = Components.utils.import('resource://gre/modules/FileUtils.jsm');" +
         "let FileUtils = fileUtils.FileUtils;" +
         "let callback = arguments[arguments.length - 1];" +
@@ -75,18 +90,20 @@ module.exports.setupDriver = () => {
         "AddonManager.installTemporaryAddon(file).catch(error => {" +
         "  Components.utils.reportError(error); callback([null, error])" +
         "});",
-        fileLocation);
+        fileLocation)
+        .then(result => {
+          if (!result[0] && result[1]) {
+            return driver.quit().then(() => {
+              throw new Error(`Failed to install add-on: ${result[1]}`);
+            });
+          }
 
-      if (!result[0] && result[1]) {
-        yield driver.quit();
-        throw new Error(`Failed to install add-on: ${result[1]}`);
-      }
-
-      return driver;
+          return driver;
+        });
     });
 };
 
-module.exports.getAddonButton = driver => {
+module.exports.promiseAddonButton = driver => {
   driver.setContext(Context.CHROME);
   return driver.wait(until.elementLocated(
     By.id("action-button--example-addon-repo-mozilla-link")), 1000);
