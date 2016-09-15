@@ -18,7 +18,7 @@ tasks:
       command:
         - "/bin/bash"
         - "-lc"
-        - "git clone {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.repo.branch}} && npm install && npm run test:lint"
+        - "git clone {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.repo.branch}} && npm install && npm run lint"
     extra:
       github:
         env: true

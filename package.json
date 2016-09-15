@@ -2,7 +2,6 @@
   "name": "example-addon-repo",
   "version": "0.0.1",
   "description": "Example add-on repository",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:mozilla/example-addon-repo.git"
@@ -11,8 +10,7 @@
     "url": "https://github.com/mozilla/example-addon-repo/issues"
   },
   "engines": {
-    "firefox": ">=48.0a1",
-    "fennec": ">=48.0a1"
+    "firefox": ">=48.0a1"
   },
   "dependencies": {},
   "devDependencies": {
@@ -23,10 +21,10 @@
     "fs-promise": "0.5.0",
     "fx-runner": "1.0.5",
     "geckodriver": "1.1.2",
-    "jpm": "1.1.4",
     "mocha": "3.0.2",
     "npm-run-all": "3.1.0",
-    "selenium-webdriver": "3.0.0-beta-2"
+    "selenium-webdriver": "3.0.0-beta-2",
+    "web-ext": "1.4.0"
   },
   "permissions": {
     "multiprocess": true
@@ -41,11 +39,13 @@
     }
   ],
   "scripts": {
-    "bundle": "jpm xpi",
+    "bundle": "web-ext -s add-on -a dist build",
+    "lint": "npm-run-all test:eslint test:webextlint",
     "test": "npm-run-all test:*",
-    "test:lint": "eslint --ext=.js,.json .",
-    "test:func": "export FIREFOX_BINARY=${FIREFOX_BINARY:-nightly} && npm run bundle && XPI_NAME=example-addon-repo.xpi mocha test/functional/",
-    "firefox": "jpm run -b ${FIREFOX_BINARY:-nightly}"
+    "test:eslint": "eslint --ext=.js,.json .",
+    "test:webextlint": "web-ext -s add-on lint",
+    "test:func": "export FIREFOX_BINARY=${FIREFOX_BINARY:-nightly} && npm run bundle && XPI_NAME=dist/example_add-on_repository-0.0.1.zip mocha test/functional/",
+    "firefox": "web-ext run -b ${FIREFOX_BINARY:-nightly}"
   },
   "license": "MPL-2.0",
   "keywords": [

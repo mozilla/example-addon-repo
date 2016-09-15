@@ -1,0 +1,27 @@
+{
+  "applications": {
+    "gecko": {
+      "id": "example-addon-repo@mozilla.org",
+        "strict_min_version": "48.0",
+        "strict_max_version": "50.*"
+    }
+  },
+  "background": {
+    "scripts": ["main.js"]
+  },
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": "img/firefox-logo.svg",
+    "default_title": "Visit Mozilla"
+  },
+
+  "description": "Example Add-on built from the example repository",
+
+  "manifest_version": 2,
+
+  "name": "Example Add-on Repository",
+
+  "permissions": [],
+
+  "version": "0.0.1"
+}

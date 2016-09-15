@@ -1,8 +1,0 @@
-.git/
-docs/
-node_modules/
-
-.eslintrc
-.gitignore
-.jpmignore
-.taskcluster.yml

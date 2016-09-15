@@ -106,5 +106,5 @@ module.exports.promiseSetupDriver = () => {
 module.exports.promiseAddonButton = driver => {
   driver.setContext(Context.CHROME);
   return driver.wait(until.elementLocated(
-    By.id("action-button--example-addon-repo-mozilla-link")), 1000);
+    By.id("example-addon-repo_mozilla_org-browser-action")), 1000);
 };
