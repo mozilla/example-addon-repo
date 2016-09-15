@@ -40,12 +40,12 @@
   ],
   "scripts": {
     "bundle": "web-ext -s add-on -a dist build",
+    "firefox": "web-ext -s add-on  run --firefox-binary ${FIREFOX_BINARY:-nightly}",
     "lint": "npm-run-all test:eslint test:webextlint",
     "test": "npm-run-all test:*",
     "test:eslint": "eslint --ext=.js,.json .",
     "test:webextlint": "web-ext -s add-on lint",
-    "test:func": "export FIREFOX_BINARY=${FIREFOX_BINARY:-nightly} && npm run bundle && XPI_NAME=dist/example_add-on_repository-0.0.1.zip mocha test/functional/",
-    "firefox": "web-ext run -b ${FIREFOX_BINARY:-nightly}"
+    "test:func": "export FIREFOX_BINARY=${FIREFOX_BINARY:-nightly} && npm run bundle && XPI_NAME=dist/example_add-on-0.0.1.zip mocha test/functional/"
   },
   "license": "MPL-2.0",
   "keywords": [

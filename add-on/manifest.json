@@ -12,14 +12,16 @@
   "browser_action": {
     "browser_style": true,
     "default_icon": "img/firefox-logo.svg",
-    "default_title": "Visit Mozilla"
+    "default_title": "__MSG_buttonTitle__"
   },
 
-  "description": "Example Add-on built from the example repository",
+  "default_locale": "en-US",
+
+  "description": "__MSG_extensionDescription__",
 
   "manifest_version": 2,
 
-  "name": "Example Add-on Repository",
+  "name": "Example Add-on",
 
   "permissions": [],
 

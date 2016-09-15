@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "Exemple d'extension",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Exemple d'extension générée à partir du dépôt de test",
+    "description": "Description of the extension."
+  },
+  "buttonTitle": {
+    "message": "Visitez Mozilla",
+    "description": "Description shown on the toolbar when hovered. DO NOT localise 'Mozilla'."
+  }
+}
