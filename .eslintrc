@@ -12,6 +12,7 @@
     "node": true,
   },
   "globals": {
+    "chrome": true
   },
   "plugins": [
     "json",

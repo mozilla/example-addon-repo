@@ -9,7 +9,6 @@ let Context = firefox.Context;
 // using an arrow function alters the binding of `this`.
 // Hence we disable prefer-arrow-callback here so that mocha/no-mocha-arrows can
 // be applied nicely.
-/* eslint prefer-arrow-callback: 0 */
 
 describe("Example Add-on Functional Tests", function() {
   // This gives Firefox time to start, and us a bit longer during some of the tests.
