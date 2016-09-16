@@ -1,9 +1,9 @@
 "use strict";
 
-/* global chrome, browser */
+/* global chrome */
 
 chrome.browserAction.onClicked.addListener(() => {
-  browser.tabs.create({
+  chrome.tabs.create({
     active: true,
     url: "https://www.mozilla.org"
   });
