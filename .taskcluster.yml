@@ -39,8 +39,12 @@ tasks:
       owner: "{{ event.head.user.email }}"
       source: "{{ event.head.repo.url }}"
     workerType: "{{ taskcluster.docker.workerType }}"
+    # Note: If you get an error such as "You didn't give the task-graph scopes
+    # allowing it define tasks on the queue", then you need to get permissions
+    # added for this scope. See [the taskcluster doc](docs/Taskcluster.md)
+    # for more detail.
     scopes:
-      - secrets:get:garbage/standard8/secretTest
+      - secrets:get:repo:github.com/mozilla/example-addon-repo:pull-request
     payload:
       env:
         NEED_WINDOW_MANAGER: true

@@ -46,6 +46,13 @@ to be uploaded to coveralls.
 
 To enable this for a new repository:
 
+* Ask in #taskcluster for credentials for:
+  * Yourself/main developers to get:
+    * secrets:set:repo:github.com/mozilla/example-addon-repo:*
+    * secrets:get:repo:github.com/mozilla/example-addon-repo:*
+  * Your repository to get:
+    * secrets:get:repo:github.com/mozilla/example-addon-repo:*
+  * Replace the url to your repository in the secrets above.
 * Log into Coveralls.
 * Go to the "Add repositories section".
 * Search for the repository and select "Turn On".
@@ -64,9 +71,6 @@ To enable this for a new repository:
 ```
 
 * Hit "Create Secret".
-
-If creation fails due to a credentials error, you'll need to ask in #taskcluster
-for permissions.
 
 # Integrating with TreeHerder
 

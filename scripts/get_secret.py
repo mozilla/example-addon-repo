@@ -2,7 +2,7 @@ import urllib2
 import json
 import sys
 
-url = "http://taskcluster/secrets/v1/secret/garbage/standard8/secretTest"
+url = "http://taskcluster/secrets/v1/secret/repo:github.com/mozilla/example-addon-repo:pull-request"
 
 try:
     res = urllib2.urlopen(url)
