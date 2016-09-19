@@ -39,6 +39,35 @@ The TaskClusterRobot needs to be added to the list of contributors for
 the repository for it to be able to report PR status properly. You'll need
 to add it with read/write permissions.
 
+## Unit Tests and Coveralls.
+
+When run on Taskcluster, the unit tests will generate code coverage information
+to be uploaded to coveralls.
+
+To enable this for a new repository:
+
+* Log into Coveralls.
+* Go to the "Add repositories section".
+* Search for the repository and select "Turn On".
+* Go to the repository page (select "Details").
+* There you will see the repo_token. Make a copy of it.
+* In Taskcluster, go to the [secrets tool](https://tools.taskcluster.net/secrets/).
+  * Enter the secret name as `repo:github.com/mozilla/example-addon-repo:pull-request`
+    * (replace the repository url as appropriate)
+  * Set the expiry date to something in the future.
+  * Set the JSON secret to (using the appropriate token):
+
+```json
+{
+  "COVERALLS_REPO_TOKEN": "abcdefghijklmnopq"
+}
+```
+
+* Hit "Create Secret".
+
+If creation fails due to a credentials error, you'll need to ask in #taskcluster
+for permissions.
+
 # Integrating with TreeHerder
 
 Integration with TreeHerder not possible at this time. In theory it should be

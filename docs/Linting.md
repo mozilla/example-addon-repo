@@ -49,6 +49,12 @@ Not included, but useful depending on the project:
 * [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
   * Provides [React](https://facebook.github.io/react/) specific linting rules.
 
+# Web-ext lint
+
+The [web-ext tool provides](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/web-ext_command_reference#web-ext_lint)
+its own linting mechanism for checking WebExtension based add-ons conform to
+[specific rules](http://mozilla.github.io/addons-linter/).
+
 # flake8 - Python Linting
 
 Although not currently used in this repository,

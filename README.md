@@ -1,9 +1,12 @@
-This repository is intended as an example repository containing templates and good practices for creating an add-on for Firefox. This could be a general add-on, or a system add-on built in a separate repository to mozilla-central.
+[![Coverage Status](https://coveralls.io/repos/github/mozilla/example-addon-repo/badge.svg)](https://coveralls.io/github/mozilla/example-addon-repo)
 
-Note: This repository is based on the add-on SDK and jpm. These are currently
-in maintenance mode and not under active development. WebExtensions will be the
-way forward, and this repository
-[will be changed to WebExtensions those soon](https://github.com/mozilla/example-addon-repo/issues/4).
+This repository is intended as an example repository containing templates and good
+practices for creating an add-on for Firefox. This could be a general add-on, or
+a system add-on built in a separate repository to mozilla-central.
+
+This repository is based on WebExtensions, which are the way forward for extensions
+in Firefox. There are a few issues with WebExtensions and SystemAddons, please see
+the Issues for more detail.
 
 # Aims
 
@@ -14,8 +17,6 @@ test suites, coverage etc quickly.
 
 # Bits currently missing
 
-* Unit tests
-* L10n
 * Integration with m-c.
 
 # Issues
@@ -32,5 +33,6 @@ create a PR.
 * [Keeping modules up to date via automated services](docs/ModulesUpdating.md)
 * Testing
   * [Linting](docs/Linting.md)
+  * [Unit Tests](docs/UnitTests.md)
   * [Functional Tests](docs/Functional.md)
   * [Continous Integration via Taskcluster](docs/Taskcluster.md)

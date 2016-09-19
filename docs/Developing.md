@@ -30,6 +30,9 @@ $ npm install
 $ npm run firefox
 ```
 
+Note: If the source to the add-on is changed, this will cause the add-on to be
+rebuilt and reloaded.
+
 # Running tests
 
 This command runs all tests:
@@ -41,7 +44,8 @@ $ npm test
 You can run individual tests, e.g.
 
 ```shell
-$ npm run test:lint
+$ npm run lint
+$ npm run test:karma
 $ npm run test:func
 ```
 
@@ -68,7 +72,7 @@ The various shorthands are:
 * `aurora` - Firefox Aurora (developer edition on non-osx)
 * `nightly` - Firefox Nightly
 
-# Bundling an xpi
+# Bundling a Zip File for Upload to AMO.
 
 ```shell
 $ npm run bundle
