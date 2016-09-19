@@ -1,9 +1,9 @@
 {
   "applications": {
     "gecko": {
-      "id": "example-addon-repo@mozilla.org",
+      "id": "exampleaddonrepo@mozilla.org",
         "strict_min_version": "48.0",
-        "strict_max_version": "50.*"
+        "strict_max_version": "52.*"
     }
   },
   "background": {
