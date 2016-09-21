@@ -46,7 +46,8 @@ to be uploaded to coveralls.
 
 To enable this for a new repository:
 
-* Ask in #taskcluster for credentials for:
+* Currently, you may need additional credentials. If you find issues in the steps
+  below, you'll need to [file a bug](https://bugzilla.mozilla.org/enter_bug.cgi?component=General&product=Taskcluster) for:
   * Yourself/main developers to get:
     * secrets:set:repo:github.com/mozilla/example-addon-repo:*
     * secrets:get:repo:github.com/mozilla/example-addon-repo:*
