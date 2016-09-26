@@ -32,6 +32,7 @@
     "sinon-chrome": "1.2.0",
     "npm-run-all": "3.1.0",
     "selenium-webdriver": "3.0.0-beta-3",
+    "virtualenv": "0.3.1",
     "web-ext": "1.4.0"
   },
   "permissions": {
@@ -48,13 +49,17 @@
   ],
   "scripts": {
     "bundle": "web-ext -s add-on -a dist build",
+    "download": "node scripts/get_ff.js",
     "firefox": "web-ext -s add-on  run --firefox-binary ${FIREFOX_BINARY:-nightly}",
     "lint": "npm-run-all test:eslint test:webextlint",
+    "virtualenv-postinstall": "virtualenv-postinstall",
     "test": "npm-run-all test:*",
     "test:eslint": "eslint --ext=.js,.json .",
     "test:webextlint": "web-ext -s add-on lint",
     "test:karma": "NODE_ENV=test karma start",
-    "test:func": "export FIREFOX_BINARY=${FIREFOX_BINARY:-nightly} && npm run bundle && XPI_NAME=dist/example_add-on-0.0.1.zip mocha test/functional/"
+    "test:func": "export FIREFOX_BINARY=${FIREFOX_BINARY:-nightly} && npm run bundle && XPI_NAME=dist/example_add-on-0.0.1.zip mocha test/functional/",
+    "uninstall": "node scripts/uninstall_ff.js",
+    "funcnonbash": "npm run bundle && mocha test/functional/"
   },
   "license": "MPL-2.0",
   "keywords": [

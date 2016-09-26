@@ -1,0 +1,2 @@
+mozdownload==1.21
+mozinstall==1.12

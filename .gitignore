@@ -1,3 +1,4 @@
+.node-virtualenv
 .DS_Store
 build
 dist

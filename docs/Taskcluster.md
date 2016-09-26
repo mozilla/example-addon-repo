@@ -53,6 +53,9 @@ To enable this for a new repository:
     * secrets:get:repo:github.com/mozilla/example-addon-repo:*
   * Your repository to get:
     * secrets:get:repo:github.com/mozilla/example-addon-repo:*
+      * For access to secrets, e.g. coverals.
+    * queue:define-task:aws-provisioner-v1/win2012r2
+      * To allow it to use the windows builders.
   * Replace the url to your repository in the secrets above.
 * Log into Coveralls.
 * Go to the "Add repositories section".
