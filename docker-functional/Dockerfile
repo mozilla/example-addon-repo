@@ -9,3 +9,5 @@ RUN bash /tmp/system-setup.sh
 # Custom startup script to avoid mozharness.
 ADD setup.sh /home/worker/bin/setup.sh
 RUN chmod 755 /home/worker/bin/*
+
+RUN npm install -g npm@^3.0.0

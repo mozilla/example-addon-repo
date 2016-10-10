@@ -14,7 +14,7 @@ tasks:
     workerType: "{{ taskcluster.docker.workerType }}"
     payload:
       maxRunTime: 1200
-      image: "standard8/example-addon-repo-lint:2016082401.ca24710db69a"
+      image: "standard8/example-addon-repo-lint:2016101001.7be6b348c431"
       command:
         - "/bin/bash"
         - "-lc"
@@ -51,7 +51,7 @@ tasks:
       features:
         taskclusterProxy: true
       maxRunTime: 1200
-      image: "standard8/example-addon-repo-functional:2016082501.01748a2b1a46"
+      image: "standard8/example-addon-repo-functional:2016101001.7be6b348c431"
       command:
         # Note: post install for virtualenv is done as a separate step as currently
         # npm install is being run as root (bug 1093833). When that is fixed, we
@@ -83,7 +83,7 @@ tasks:
       env:
         NEED_WINDOW_MANAGER: true
       maxRunTime: 1200
-      image: "standard8/example-addon-repo-functional:2016082501.01748a2b1a46"
+      image: "standard8/example-addon-repo-functional:2016101001.7be6b348c431"
       command:
         - "/bin/bash"
         - "-lc"
