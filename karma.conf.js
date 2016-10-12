@@ -29,7 +29,7 @@ module.exports = function(config) {
     files: [
       "node_modules/sinon/pkg/sinon.js",
       "node_modules/sinon-chrome/bundle/sinon-chrome.min.js",
-      "add-on/main.js",
+      "add-on/webextension/main.js",
       "test/unit/*.test.js"
     ],
     preprocessors: {"add-on/*.js": ["coverage"]},
