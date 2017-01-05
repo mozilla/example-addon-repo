@@ -18,7 +18,7 @@ tasks:
       command:
         - "/bin/bash"
         - "-lc"
-        - "git clone {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.repo.branch}} && npm install && npm run lint"
+        - "git clone {{event.head.repo.url}} repo && cd repo && git checkout '{{event.head.repo.branch}}' && npm install && npm run lint"
     extra:
       github:
         env: true
@@ -58,7 +58,7 @@ tasks:
         # should be able to merge them.
         - "/bin/bash"
         - "-lc"
-        - "./bin/setup.sh && git clone {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.repo.branch}} && npm install && npm run virtualenv-postinstall && npm run download && export FIREFOX_BINARY=`cat build/fflocation.txt` && COVERALLS_REPO_TOKEN=`python scripts/get_secret.py` FIREFOX_BIN=${FIREFOX_BINARY} npm run test:karma"
+        - "./bin/setup.sh && git clone {{event.head.repo.url}} repo && cd repo && git checkout '{{event.head.repo.branch}}' && npm install && npm run virtualenv-postinstall && npm run download && export FIREFOX_BINARY=`cat build/fflocation.txt` && COVERALLS_REPO_TOKEN=`python scripts/get_secret.py` FIREFOX_BIN=${FIREFOX_BINARY} npm run test:karma"
     extra:
       github:
         env: true
@@ -87,7 +87,7 @@ tasks:
       command:
         - "/bin/bash"
         - "-lc"
-        - "./bin/setup.sh && git clone {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.repo.branch}} && npm install && npm run virtualenv-postinstall && npm run download && export FIREFOX_BINARY=`cat build/fflocation.txt` && npm run test:func"
+        - "./bin/setup.sh && git clone {{event.head.repo.url}} repo && cd repo && git checkout '{{event.head.repo.branch}}' && npm install && npm run virtualenv-postinstall && npm run download && export FIREFOX_BINARY=`cat build/fflocation.txt` && npm run test:func"
     extra:
       github:
         env: true
@@ -115,7 +115,7 @@ tasks:
       command:
           - "git clone https://github.com/mozilla/example-addon-repo.git repo"
           - "cd repo"
-          - "git checkout {{event.head.repo.branch}}"
+          - "git checkout '{{event.head.repo.branch}}'"
           - "set PYTHON=C:\\mozilla-build\\python\\python.exe"
           - "echo %PATH%"
           - "npm install"
