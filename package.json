@@ -14,13 +14,13 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "3.12.2",
+    "eslint": "3.13.0",
     "eslint-plugin-json": "1.2.0",
     "eslint-plugin-mocha": "4.8.0",
     "eslint-plugin-promise": "3.4.0",
     "fs-promise": "1.0.0",
     "fx-runner": "1.0.6",
-    "geckodriver": "1.2.0",
+    "geckodriver": "1.3.0",
     "karma": "1.3.0",
     "karma-coverage": "1.1.1",
     "karma-coveralls": "1.1.2",
@@ -34,6 +34,11 @@
     "selenium-webdriver": "3.0.0-beta-3",
     "virtualenv": "0.3.1",
     "web-ext": "1.7.0"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "selenium-webdriver"
+    ]
   },
   "permissions": {
     "multiprocess": true
