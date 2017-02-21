@@ -1,4 +1,5 @@
 version: 0
+allowPullRequests: public
 metadata:
   name: Example Add-on
   description: Example Add-on CI Tasks
