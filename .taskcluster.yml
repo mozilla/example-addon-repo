@@ -52,7 +52,7 @@ tasks:
       features:
         taskclusterProxy: true
       maxRunTime: 1200
-      image: "standard8/example-addon-repo-functional:2016101001.7be6b348c431"
+      image: "standard8/example-addon-repo-functional:2017050301.82c2d17e74ef"
       command:
         # Note: post install for virtualenv is done as a separate step as currently
         # npm install is being run as root (bug 1093833). When that is fixed, we
@@ -84,7 +84,7 @@ tasks:
       env:
         NEED_WINDOW_MANAGER: true
       maxRunTime: 1200
-      image: "standard8/example-addon-repo-functional:2016101001.7be6b348c431"
+      image: "standard8/example-addon-repo-functional:2017050301.82c2d17e74ef"
       command:
         - "/bin/bash"
         - "-lc"
