@@ -18,7 +18,7 @@ docker build -t <username>/example-addon-repo-functional .
 ```
 
 Ideally at this stage you should test it out, but if you're working on an
-experiemental branch, it is sometimes easier to push it, and see what taskcluster
+experimental branch, it is sometimes easier to push it, and see what taskcluster
 does with it.
 
 Tag the image, and push it. For the tag, the recommended setting is
@@ -30,4 +30,3 @@ original build image is based on.
 docker tag <username>/example-addon-repo-functional:latest <username>/example-addon-repo-functional:2016082401.ca24710db69a
 docker push <username>/example-addon-repo-functional:2016082401.ca24710db69a
 ```
-
