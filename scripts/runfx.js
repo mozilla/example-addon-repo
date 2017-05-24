@@ -8,7 +8,7 @@
 /* eslint promise/always-return:off */
 
 const Commander = require("commander");
-const Fs = require("fs-promise");
+const Fs = require("mz/fs");
 const Path = require("path");
 const Rimraf = require("rimraf");
 const Util = require("./run-utils");

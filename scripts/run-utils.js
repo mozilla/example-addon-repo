@@ -7,7 +7,7 @@
 /* eslint promise/always-return:off */
 
 const Extend = require("lodash").extend;
-const Fs = require("fs-promise");
+const Fs = require("mz/fs");
 const FxProfileFinder = require("firefox-profile/lib/profile_finder");
 const FxRunner = require("fx-runner/lib/run");
 const Path = require("path");
