@@ -15,7 +15,7 @@ tasks:
     workerType: "{{ taskcluster.docker.workerType }}"
     payload:
       maxRunTime: 1200
-      image: "standard8/example-addon-repo-lint:2016101001.7be6b348c431"
+      image: "standard8/example-addon-repo-lint:2017080201.52285ea5e54c"
       command:
         - "/bin/bash"
         - "-lc"
