@@ -90,10 +90,9 @@ Fs.stat(addonSourceDir).then(sourceStat => {
     // Add-on should be in the correct place, so now we can run Firefox.
     return Util.runFirefox(Commander).catch(() => {
       // Ignore run Firefox issues and continue to cleanup
-    })
-    .then(() => {
+    }).then(() => {
       console.log("Removing symlink");
       return Fs.unlink(addonTargetDir);
     });
   })
-.catch(onExit);
+  .catch(onExit);
