@@ -35,7 +35,7 @@
     "npm-run-all": "4.1.1",
     "selenium-webdriver": "3.4.0",
     "virtualenv": "0.3.1",
-    "web-ext": "2.0.0"
+    "web-ext": "2.2.1"
   },
   "greenkeeper": {
     "ignore": [
