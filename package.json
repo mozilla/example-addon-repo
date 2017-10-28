@@ -15,7 +15,7 @@
   "dependencies": {},
   "devDependencies": {
     "commander": "2.11.0",
-    "eslint": "4.8.0",
+    "eslint": "4.10.0",
     "eslint-plugin-json": "1.2.0",
     "eslint-plugin-mocha": "4.11.0",
     "eslint-plugin-promise": "3.5.0",
